@@ -1,0 +1,24 @@
+import re
+
+stringdata = '''
+Akash is 27 years old, and Sanket is 25 years old
+Rushikesh is 22, and their father, Amit is 60 year old
+'''
+
+# .findall() function to get all the data
+ages = re.findall(r'\d{1,3}',stringdata)
+names = re.findall(r'[A-Z][a-z]*', stringdata)
+print('Ages:',ages)
+print('Names:', names)
+
+
+words = re.split(r'\s',stringdata) #.split(pattern, string) to slplit th 'string' by the 'pattern'
+print('All words:',words)
+
+threeletterwords=[] # empty list
+for each in words:
+    match = re.search(r'^(\w{3})$', each) # search for 3 letter words
+    if match:
+        threeletterwords.append(match.group(0)) # adding items that are 3 lettered to the list
+
+print('Three letter words:',threeletterwords)
