@@ -1,0 +1,16 @@
+import urllib.request,urllib.parse
+import re   
+
+
+url="https://www.tutorialspoint.com/python/python_multithreading.htm"
+response=urllib.request.urlopen(url)
+data=response.read()
+
+hyperlinks=re.findall(r'<a href="(.*?)">', str(data))
+paragraph=re.findall(r'<p(.*?)">', str(data))
+
+for link in hyperlinks:
+    print(link)
+
+for para in paragraph:
+    print(para)
