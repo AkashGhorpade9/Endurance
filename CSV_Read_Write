@@ -1,0 +1,26 @@
+import csv
+    
+with open("fcb.csv") as f:
+        obj = csv.reader(f)
+        rows=[]
+        for i in obj:
+            rows.append(i)
+    
+        #print(rows)
+        
+for j in rows:
+    
+    a,b=j[0],j[2]
+    
+    print(a,b)
+question='Y'
+while(question!='N'):
+    question=input("Would you like to add a player, Y or N?")
+    if question=='Y':
+        jersey=int(input('Enter Jersey Number'))
+        names=input('Enter Player Name')
+        
+        with open("fcb.csv",'a',newline='') as f:
+            w = csv.writer(f)
+            w.writerow([jersey,'',names])
+        
