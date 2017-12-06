@@ -2,7 +2,7 @@ import re
 
 stringdata = '''
 Akash is 27 years old, and Sanket is 25 years old
-Rushikesh is 22, and their father, Amit is 60 year old
+Rushikesh is 22, Amit is 60 year old
 '''
 
 # .findall() function to get all the data
