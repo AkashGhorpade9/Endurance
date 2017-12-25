@@ -6,7 +6,7 @@ for i in range(len(li)):
     s = smtplib.SMTP('smtp.gmail.com',587 )
     s.ehlo()
     s.starttls()
-    s.login('akashghorpade93@gmail.com', 'weltmeister14')
+    s.login('akashghorpade93@gmail.com', '****')
     
     s.sendmail("akashghorpade93@gmail.com",li[i] , message)
     s.quit()
