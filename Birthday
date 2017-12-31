@@ -1,0 +1,13 @@
+import time
+import ctypes
+
+filename= open("abc.txt",'r') 
+today=time.strftime('%m%d')
+
+for j in filename:
+    if today in j:
+        j=j.split(' ')
+        
+        MessageBox = ctypes.windll.user32.MessageBoxW
+        MessageBox(None, j[0]+ ' '+ j[1]+" has birthday today", 'Notification', 0)
+        
